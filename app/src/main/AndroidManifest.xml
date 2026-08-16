@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="Physicomimetics"
+        android:roundIcon="@drawable/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".MainMenuActivity"
+            android:exported="true"
+            android:screenOrientation="sensorPortrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".particle.ParticleFormationActivity"
+            android:label="Particle Formation"
+            android:exported="false"
+            android:screenOrientation="fullSensor" />
+
+        <activity
+            android:name=".newtonian.NewtonianFormationActivity"
+            android:label="Split Newtonian Formation"
+            android:exported="false"
+            android:screenOrientation="fullSensor" />
+
+        <activity
+            android:name=".coverage.UniformCoverageActivity"
+            android:label="Uniform Coverage"
+            android:exported="false"
+            android:screenOrientation="fullSensor" />
+
+        <activity
+            android:name=".kinetic.KineticTheoryActivity"
+            android:label="Kinetic Theory"
+            android:exported="false"
+            android:screenOrientation="fullSensor" />
+
+        <activity
+            android:name=".dinos.DinosActivity"
+            android:label="Bioluminescence"
+            android:exported="false"
+            android:screenOrientation="fullSensor" />
+
+        <activity
+            android:name=".apo.ApoActivity"
+            android:label="Artificial Physics Optimization"
+            android:exported="false"
+            android:screenOrientation="fullSensor" />
+
+        <activity
+            android:name=".perfect.PerfectFormationActivity"
+            android:label="Perfect Lattice Formation"
+            android:exported="false"
+            android:screenOrientation="fullSensor" />
+
+        <activity
+            android:name=".fluxotaxis.FluxotaxisActivity"
+            android:label="Fluxotaxis"
+            android:exported="false"
+            android:screenOrientation="fullSensor" />
+
+    </application>
+
+</manifest>

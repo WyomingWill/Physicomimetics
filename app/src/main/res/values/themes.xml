@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Extends the app's existing base theme (previously referenced directly in
+        AndroidManifest.xml with no overrides, which is why buttons/sliders/spinners
+        had no consistent color and fell back to ambient Material defaults). Adds the
+        teal button / cyan slider look app-wide, and switches the parent to NoActionBar
+        so the native ActionBar (which duplicated the per-screen TabLayout's "Interface"
+        tab as a second title banner) no longer shows on any screen; each screen's
+        "Interface" tab now carries the simulation's name directly instead.
+    -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="materialButtonStyle">@style/Widget.Fluxo.Button</item>
+        <item name="sliderStyle">@style/Widget.Fluxo.Slider</item>
+    </style>
+</resources>

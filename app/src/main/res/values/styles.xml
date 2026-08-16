@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        App-wide default look for Button and Slider, referenced by AppTheme in
+        themes.xml. Because every module's layout uses plain unstyled Button tags and
+        an unstyled com.google.android.material.slider.Slider (no per-widget style=
+        overrides anywhere; verified), setting these as the theme's default
+        materialButtonStyle/sliderStyle applies them everywhere automatically: every
+        existing button and slider across all 8 simulations, plus anything added later,
+        with no per-layout-file edits needed.
+    -->
+    <style name="Widget.Fluxo.Button" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/fluxo_button_fill</item>
+        <item name="android:textColor">@color/fluxo_text_light</item>
+    </style>
+
+    <style name="Widget.Fluxo.Slider" parent="Widget.MaterialComponents.Slider">
+        <item name="thumbColor">@color/fluxo_accent_cyan</item>
+        <item name="trackColorActive">@color/fluxo_accent_cyan</item>
+        <item name="trackColorInactive">@color/fluxo_track_inactive</item>
+        <item name="tickVisible">false</item>
+    </style>
+</resources>

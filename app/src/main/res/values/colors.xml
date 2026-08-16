@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Cool cyan/teal palette for the Fluxotaxis screen's controls. Scoped to this
+        screen (fluxo_ prefix) rather than touching the app-wide theme, since there's
+        no existing colors.xml/custom theme to build on; every widget elsewhere in
+        this app falls back to whatever the ambient Material DayNight defaults resolve
+        to, which is why buttons/sliders/spinners were reading as dark-gray-on-dark-gray.
+        Picked to echo colors already used in the simulation view itself: cyan source
+        marker, sea-green wind vectors.
+    -->
+    <color name="fluxo_accent_cyan">#26C6DA</color>
+    <color name="fluxo_accent_teal_bright">#00BFA5</color>
+    <color name="fluxo_button_fill">#0F5C6B</color>
+    <color name="fluxo_track_inactive">#37474F</color>
+    <color name="fluxo_switch_track_off">#455A64</color>
+    <color name="fluxo_text_light">#E0F7FA</color>
+    <color name="fluxo_spinner_bg">#16262B</color>
+</resources>

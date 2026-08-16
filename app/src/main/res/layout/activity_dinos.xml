@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#212121">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2C2C2C"
+        app:tabTextColor="#AAAAAA"
+        app:tabSelectedTextColor="#FFFFFF"
+        app:tabIndicatorColor="#4CAF50">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bioluminescence" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Info" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/interfaceContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.example.combinedsimulations.dinos.DinosSimulationView
+                android:id="@+id/simulationView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ScrollView
+                android:id="@+id/controlsScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fillViewport="true"
+                android:layout_marginTop="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button android:id="@+id/btnSetup" android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Setup" android:layout_marginEnd="4dp" />
+                        <Button android:id="@+id/btnRunDinos" android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Run Dinos" android:textSize="12sp" android:layout_marginStart="4dp" android:layout_marginEnd="4dp" />
+                        <Button android:id="@+id/btnMoveDrones" android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Move Drones" android:textSize="12sp" android:layout_marginStart="4dp" android:layout_marginEnd="4dp" />
+                        <Button android:id="@+id/btnStop" android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Stop" android:layout_marginStart="4dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp">
+
+                        <Button android:id="@+id/btnToggleGoal" android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Toggle Goal" android:textSize="12sp" android:layout_marginEnd="4dp" />
+                        <Button android:id="@+id/btnToggleMinMax" android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Toggle Min/Max" android:textSize="12sp" android:layout_marginStart="4dp" />
+                    </LinearLayout>
+
+                    <TextView android:id="@+id/labelDrones" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Number of Drones: 7" android:textColor="#FFFFFF" android:layout_marginTop="16dp" />
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderDrones"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:valueFrom="1" android:valueTo="7" android:value="7" android:stepSize="1" />
+
+                    <TextView android:id="@+id/labelSeed" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Random Seed: 79" android:textColor="#FFFFFF" android:layout_marginTop="8dp" />
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderSeed"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:valueFrom="1" android:valueTo="100" android:value="79" android:stepSize="1" />
+
+                    <TextView android:id="@+id/labelDinos" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Number of Dinos: 280" android:textColor="#FFFFFF" android:layout_marginTop="8dp" />
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderDinos"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:valueFrom="0" android:valueTo="500" android:value="280" android:stepSize="10" />
+
+                    <TextView android:id="@+id/labelForceMax" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Force Maximum: 1.0" android:textColor="#FFFFFF" android:layout_marginTop="8dp" />
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderForceMax"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:valueFrom="1" android:valueTo="5" android:value="1" android:stepSize="0.1" />
+
+                    <TextView android:id="@+id/labelFriction" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Friction: 0.50" android:textColor="#FFFFFF" android:layout_marginTop="8dp" />
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderFriction"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:valueFrom="0" android:valueTo="1" android:value="0.5" android:stepSize="0.01" />
+
+                    <TextView android:id="@+id/labelTimeStep" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Time Step: 0.50" android:textColor="#FFFFFF" android:layout_marginTop="8dp" />
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderTimeStep"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:valueFrom="0.01" android:valueTo="1" android:value="0.5" android:stepSize="0.01" />
+
+                    <TextView android:id="@+id/labelSeparation" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Desired Separation: 4" android:textColor="#FFFFFF" android:layout_marginTop="8dp" />
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderSeparation"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:valueFrom="2" android:valueTo="20" android:value="4" android:stepSize="1" />
+
+                    <TextView android:id="@+id/labelGoalForce" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Goal Force: 0.30" android:textColor="#FFFFFF" android:layout_marginTop="8dp" />
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderGoalForce"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:valueFrom="0" android:valueTo="1" android:value="0.3" android:stepSize="0.01" />
+
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/infoContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:background="#212121"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/infoText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:lineSpacingExtra="4dp" />
+
+        </ScrollView>
+
+    </FrameLayout>
+
+</LinearLayout>

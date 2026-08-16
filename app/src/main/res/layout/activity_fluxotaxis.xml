@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#212121">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2C2C2C"
+        app:tabTextColor="#AAAAAA"
+        app:tabSelectedTextColor="#FFFFFF"
+        app:tabIndicatorColor="@color/fluxo_accent_cyan">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fluxotaxis" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Info" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/interfaceContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.example.combinedsimulations.fluxotaxis.FluxotaxisSimulationView
+                android:id="@+id/simulationView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ScrollView
+                android:id="@+id/controlsScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button android:id="@+id/btnRun" android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Run" android:layout_marginEnd="4dp" />
+                        <Button android:id="@+id/btnResetSwarm" android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Reset Swarm" android:textSize="12sp" android:layout_marginStart="4dp" android:layout_marginEnd="4dp" />
+                        <Button android:id="@+id/btnNewScenario" android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="New Scenario" android:textSize="12sp" android:layout_marginStart="4dp" />
+                    </LinearLayout>
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Map" android:textColor="@color/fluxo_accent_teal_bright" android:textStyle="bold" android:layout_marginTop="16dp" />
+
+                    <TextView android:id="@+id/labelDimension" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Dimension: 96" android:textColor="#FFFFFF" android:layout_marginTop="8dp" />
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderDimension"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:valueFrom="48" android:valueTo="160" android:value="96" android:stepSize="1" />
+
+                    <TextView android:id="@+id/labelObstacles" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Obstacles: 14" android:textColor="#FFFFFF" android:layout_marginTop="8dp" />
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderObstacles"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:valueFrom="0" android:valueTo="40" android:value="14" android:stepSize="1" />
+
+                    <TextView android:id="@+id/labelObstacleSize" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Obstacle size (area basis): 6" android:textColor="#FFFFFF" android:layout_marginTop="8dp" />
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderObstacleSize"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:valueFrom="2" android:valueTo="16" android:value="6" android:stepSize="1" />
+
+                    <Button android:id="@+id/btnGenerateMap" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Generate New Map" android:layout_marginTop="8dp" />
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Display" android:textColor="@color/fluxo_accent_teal_bright" android:textStyle="bold" android:layout_marginTop="16dp" />
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:layout_marginTop="4dp" android:gravity="center_vertical">
+                        <com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/switchLogScale" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true"
+                            app:thumbTint="@color/fluxo_switch_thumb" app:trackTint="@color/fluxo_switch_track" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Log color scale" android:textColor="#FFFFFF" android:layout_marginStart="8dp" />
+                    </LinearLayout>
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Wind" android:textColor="@color/fluxo_accent_teal_bright" android:textStyle="bold" android:layout_marginTop="16dp" />
+
+                    <Spinner android:id="@+id/spinnerWindDirection" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp" android:background="@drawable/fluxo_spinner_background"
+                        android:paddingStart="12dp" android:paddingEnd="36dp" android:paddingTop="10dp" android:paddingBottom="10dp" />
+
+                    <TextView android:id="@+id/labelTurbulence" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Turbulence speed (orig.=1): 1" android:textColor="#FFFFFF" android:layout_marginTop="8dp" />
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderTurbulence"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:valueFrom="1" android:valueTo="20" android:value="1" android:stepSize="1" />
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:layout_marginTop="8dp" android:gravity="center_vertical">
+                        <com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/switchVectors" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true"
+                            app:thumbTint="@color/fluxo_switch_thumb" app:trackTint="@color/fluxo_switch_track" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Show wind vectors" android:textColor="#FFFFFF" android:layout_marginStart="8dp" />
+                    </LinearLayout>
+
+                    <LinearLayout android:id="@+id/vectorOptionsGroup" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView android:id="@+id/labelVectorSpacing" android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:text="Vector spacing: 6" android:textColor="#FFFFFF" android:layout_marginTop="8dp" />
+                        <com.google.android.material.slider.Slider android:id="@+id/sliderVectorSpacing"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:valueFrom="2" android:valueTo="16" android:value="6" android:stepSize="1" />
+
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="horizontal" android:layout_marginTop="8dp" android:gravity="center_vertical">
+                            <com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/switchMatchedScale" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true"
+                                app:thumbTint="@color/fluxo_switch_thumb" app:trackTint="@color/fluxo_switch_track" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="1:1 (matched U/V scale)" android:textColor="#FFFFFF" android:layout_marginStart="8dp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Swarm" android:textColor="@color/fluxo_accent_teal_bright" android:textStyle="bold" android:layout_marginTop="16dp" />
+
+                    <TextView android:id="@+id/labelAgents" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Agents: 12" android:textColor="#FFFFFF" android:layout_marginTop="8dp" />
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderAgents"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:valueFrom="3" android:valueTo="40" android:value="12" android:stepSize="1" />
+
+                    <Spinner android:id="@+id/spinnerAlgorithm" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp" android:background="@drawable/fluxo_spinner_background"
+                        android:paddingStart="12dp" android:paddingEnd="36dp" android:paddingTop="10dp" android:paddingBottom="10dp" />
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:layout_marginTop="8dp" android:gravity="center_vertical">
+                        <com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/switchCasting" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true"
+                            app:thumbTint="@color/fluxo_switch_thumb" app:trackTint="@color/fluxo_switch_track" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Casting (standalone + fallback)" android:textColor="#FFFFFF" android:layout_marginStart="8dp" />
+                    </LinearLayout>
+
+                    <TextView android:id="@+id/labelSpeed" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Speed (steps/sec): 15" android:textColor="#FFFFFF" android:layout_marginTop="8dp" />
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderSpeed"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:valueFrom="1" android:valueTo="60" android:value="15" android:stepSize="1" />
+
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/infoContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:background="#212121"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/infoText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:lineSpacingExtra="4dp" />
+
+        </ScrollView>
+
+    </FrameLayout>
+
+</LinearLayout>

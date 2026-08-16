@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#212121">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Swarm Simulations"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="40dp" />
+
+        <Button
+            android:id="@+id/btnParticleFormation"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:text="Particle Formation (Lennard-Jones Lattice)"
+            android:textAlignment="center"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/btnNewtonianFormation"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:text="Split Newtonian Formation (Goal + Obstacles)"
+            android:textAlignment="center"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/btnUniformCoverage"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:text="Uniform Coverage (Mean Free Path)"
+            android:textAlignment="center"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/btnKineticTheory"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:text="Kinetic Theory (Couette Flow)"
+            android:textAlignment="center"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/btnDinos"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:text="Bioluminescence (Drones and Dinoflagellates)"
+            android:textAlignment="center"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/btnApo"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:text="Artificial Physics Optimization (Noisy Function Search)"
+            android:textAlignment="center"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/btnPerfectFormation"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:text="Perfect Lattice Formation (Defect-Free Self-Organization)"
+            android:textAlignment="center"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/btnFluxotaxis"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:text="Fluxotaxis (Chemical Plume Tracing)"
+            android:textAlignment="center" />
+
+    </LinearLayout>
+</ScrollView>
